@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+// import 'package:myapp/container_widget.dart';
+// import 'package:myapp/row_column/column_widget.dart';
+// import 'package:myapp/row_column/row_column_widget.dart';
+// import 'package:myapp/row_column/row_widget.dart';
+import 'package:myapp/row_column/latihan_row_column_widget.dart';
 
 void main(){
   runApp(MyApp());
@@ -13,12 +18,11 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 244, 11, 143),
-          title: Text("Belajar Flutter")
-        ), // AppBar
-        body: Center(
-          child: Text("Hello World")     
-           )
-      ), //Scaffold
-    ); // MaterialApp
-  }
+          centerTitle: true,
+          title: Text("Belajar Flutter"),
+          ), 
+          body: LatihanRowColumn() 
+           ),
+        ); 
+    }
 }
