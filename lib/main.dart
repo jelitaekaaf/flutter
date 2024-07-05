@@ -10,8 +10,12 @@ import 'package:flutter/material.dart';
 // import 'package:myapp/list_view/list_basic.dart';
 // import 'package:myapp/list_view/list_builder.dart';
 // import 'package:myapp/list_view/list_separated.dart';
-import 'package:myapp/list_view/list_example.dart';
-
+// import 'package:myapp/list_view/list_example.dart';
+// import 'package:myapp/screens/about_screen.dart';
+// import 'package:myapp/screens/home_screen.dart';
+import 'package:myapp/screens/abouts_screen.dart';
+import 'package:myapp/screens/homes_screen.dart';
+import 'package:myapp/screens/wisata_screen.dart';
 void main(){
   runApp(MyApp());
 }
@@ -19,17 +23,25 @@ void main(){
 class MyApp extends StatelessWidget {
  const MyApp({Key? key}) : super(key: key);
 
+
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 244, 11, 143),
-          centerTitle: true,
-          title: Text("Belajar Flutter"),
-          ), 
-          body: ListExample() 
-           ),
-        ); 
-    }
+      routes:{
+        '/about': (context) => AboutsScreen(),
+        '/home': (context)=> HomesScreen(),
+        '/wisata': (context) => ListWisataScreen(),
+        
+      },
+      initialRoute: '/home',
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: HomesScreen()
+    );
+  }
 }
+
